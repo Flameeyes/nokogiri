@@ -156,9 +156,9 @@ file GENERATED_TOKENIZER => "lib/nokogiri/css/tokenizer.rex" do |t|
   end
 end
 
-require 'tasks/test'
+require File.dirname(__FILE__) + '/tasks/test'
 begin
-  require 'tasks/cross_compile' unless java
+  require File.dirname(__FILE__) + '/tasks/cross_compile' unless java
 rescue RuntimeError => e
   warn "WARNING: Could not perform some cross-compiling: #{e}"
 end
